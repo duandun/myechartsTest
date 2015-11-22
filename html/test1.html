@@ -11,8 +11,8 @@
 		
 	</div>
 
-<script src="../js/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" ></script>
-<script src="../js/echarts-all.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/libs/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" ></script>
+<script src="../js/libs/echarts-all.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 	$(document).ready(function($){
 var _option = {
@@ -146,6 +146,10 @@ var obj = new fun();
 fun.prototype.age = 18;
 delete obj.age;
 console.log(obj.age) //18
+
+var name = "lili";
+delete name;
+console.log(name);
 
 myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param){
 
