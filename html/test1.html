@@ -96,6 +96,9 @@ var _option = {
             name:'2011全国GDP对比',
             type:'pie',
             selectedMode: 'single',
+            markPoint: {
+                data: [{name: "北京",value:16251.93, x: 500, y: 200},]
+            },
             tooltip: {
                 trigger: 'item',
                 formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -116,26 +119,22 @@ var _option = {
 var myChart = echarts.init(document.getElementById("main"));
 
 var ecConfig = echarts.config;
-// myChart.on(ecConfig.EVENT.HOVER, function(param){
-// 	//console.log(param.name);
-// 	var mapSeries = _option.series[1];
-// 	var name;
-// 	for(var p = 0;p<mapSeries.data.length; p++) {
-// 		name = mapSeries.data[p].name;
-// 		if(name == param.name) {
-// 			console.log("ss" + name);
-// 			mapSeries.data[p].itemStyle = {
-// 				normal: {
-// 					color: "#ddd"
-// 				}
-// 			};
-// 			myChart.setOption(_option, true);
-// 		} else {
-// 			//delete mapSeries.data[p].itemStyle;
-// 		}
-		
-// 	}
-// });
+myChart.on(ecConfig.EVENT.HOVER, function(param){
+	//console.log(param.name);
+	var mapSeries = _option.series[1];
+	var name;
+	for(var p = 0;p<mapSeries.data.length; p++) {
+		name = mapSeries.data[p].name;
+		if(name == param.name) {
+			//console.log("ss" + name);
+			mapSeries.data[p].selected = true;
+			myChart.setOption(_option, true);
+		} else {
+            mapSeries.data[p].selected = false;
+			//delete mapSeries.data[p].itemStyle;
+		}
+	}
+});
 var fun = function() {
 	this.name = "mm";
 }
@@ -170,15 +169,18 @@ myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param){
         // }
         if(param.target == name) {
         	//consoel.log("hhhhhh");
-        	mapSeries.data[p].itemStyle = {
-        		normal: {
-        			borderWidth: 5
-        		}
-        	};
+           // myChart.chart.pie._selected[1][0] = true;
+            mapSeries.data[p].selected = true;
+        //	console.log(myChart.chart.pie);
+        } else {
+            mapSeries.data[p].selected = false;
         }
     }
     _option.series[1].data = data;
     myChart.setOption(_option, true);
+});
+myChart.on(ecConfig.EVENT.PIE_SELECTED, function(param){
+    console.log(param);
 })
 
 var array = [];
