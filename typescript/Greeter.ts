@@ -95,3 +95,29 @@ class Clock1 {
 }
 var cs: ClockInterface1 = Clock1;
 var newClock = new cs(7, 10);
+
+interface Shape {
+	color: string;
+}
+interface PenStroke {
+	penWidth: number;
+}
+interface Square extends Shape, PenStroke {
+	sideLength: number;
+}
+var square = <Square>{};
+square.color = "blue";
+square.sideLength = 10;
+square.penWidth = 5.0;
+
+interface Counter {
+	(start: number): string;
+	interval: number;
+	reset(): void;
+}
+var count: Counter;
+count(10);
+count.reset();
+count.interval = 5.0;
+
+

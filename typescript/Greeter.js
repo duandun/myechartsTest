@@ -69,3 +69,11 @@ var Clock1 = (function () {
 })();
 var cs = Clock1;
 var newClock = new cs(7, 10);
+var square = {};
+square.color = "blue";
+square.sideLength = 10;
+square.penWidth = 5.0;
+var count;
+count(10);
+count.reset();
+count.interval = 5.0;
