@@ -19,7 +19,7 @@ class Animal {
 }
 class Snake extends Animal {
 	constructor(name: string) {
-		//alert("Snake" + name);
+		alert("Snake" + name);
 		super(name);
 	}
 	move(meters = 5) {
@@ -31,6 +31,7 @@ class Horse extends Animal {
 	constructor(name: string) { super(name); }
 	move(meters = 45) {
 		alert("Galloping...");
+		alert("fine");
 		super.move(meters);
 	}
 }
@@ -64,10 +65,20 @@ class Employee {
 	}
 }
 
+/*var employee = new Employee();
+employee.fullName = "Bob Smith";
+if(employee.fullName) {
+	alert(employee.fullName);
+}*/
+
 var employee = new Employee();
 employee.fullName = "Bob Smith";
 if(employee.fullName) {
 	alert(employee.fullName);
 }
 
+var a = 5;
+var tt = 8;
+var kk = 5;
+var mm = 3;
 

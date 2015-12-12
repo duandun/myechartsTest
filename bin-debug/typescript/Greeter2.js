@@ -26,7 +26,7 @@ var Animal = (function () {
 var Snake = (function (_super) {
     __extends(Snake, _super);
     function Snake(name) {
-        //alert("Snake" + name);
+        alert("Snake" + name);
         _super.call(this, name);
     }
     Snake.prototype.move = function (meters) {
@@ -44,6 +44,7 @@ var Horse = (function (_super) {
     Horse.prototype.move = function (meters) {
         if (meters === void 0) { meters = 45; }
         alert("Galloping...");
+        alert("fine");
         _super.prototype.move.call(this, meters);
     };
     return Horse;
@@ -93,4 +94,5 @@ if (employee.fullName) {
 }
 var a = 5;
 var tt = 8;
-//# sourceMappingURL=Greeter2.js.map
+var kk = 5;
+var mm = 3;

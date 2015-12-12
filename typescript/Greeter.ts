@@ -120,4 +120,7 @@ count(10);
 count.reset();
 count.interval = 5.0;
 
+var k = 5;
+
+
 
