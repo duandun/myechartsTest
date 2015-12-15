@@ -53,14 +53,6 @@ var sam = new Snake("Sammy the Python");
 var tom = new Horse("Tommy the Palomino");
 sam.move();
 tom.move(34);
-// class Employee {
-// 	fullName: string;
-// }
-// var employee = new Employee();
-// employee.fullName = "Bob Smith";
-// if (employee.fullName) {
-// 	alert(employee.fullName);
-// }
 var passcode = "secret passcode1";
 var Employee = (function () {
     function Employee() {
@@ -82,17 +74,8 @@ var Employee = (function () {
     });
     return Employee;
 })();
-/*var employee = new Employee();
-employee.fullName = "Bob Smith";
-if(employee.fullName) {
-    alert(employee.fullName);
-}*/
 var employee = new Employee();
 employee.fullName = "Bob Smith";
 if (employee.fullName) {
     alert(employee.fullName);
 }
-var a = 5;
-var tt = 8;
-var kk = 5;
-var mm = 3;
